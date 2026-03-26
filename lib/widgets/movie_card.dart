@@ -10,6 +10,7 @@ class MovieCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Card Container
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       decoration: BoxDecoration(
@@ -19,6 +20,7 @@ class MovieCard extends StatelessWidget {
       ),
       child: InkWell(
         onTap: () {
+          // Navigate to detail screen
           Navigator.push(
             context,
             MaterialPageRoute(
@@ -32,6 +34,7 @@ class MovieCard extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // Poster
               ClipRRect(
                 borderRadius: BorderRadius.circular(4),
                 child: Image.network(
@@ -54,10 +57,12 @@ class MovieCard extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 16),
+              // Infos
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    // Title
                     Text(
                       movie.title,
                       style: const TextStyle(
@@ -69,6 +74,7 @@ class MovieCard extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                     const SizedBox(height: 8),
+                    // Year
                     Row(
                       children: [
                         const Icon(
@@ -87,6 +93,7 @@ class MovieCard extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 8),
+                    // Genre
                     Text(
                       movie.genre,
                       style: const TextStyle(
@@ -97,6 +104,7 @@ class MovieCard extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                     const SizedBox(height: 12),
+                    // Rating
                     Row(
                       children: [
                         const Icon(
